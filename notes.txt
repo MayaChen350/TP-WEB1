@@ -1,0 +1,23 @@
+Le travail est MINIMALISTE
+
+Liste des personnages utilisés :
+
+Entités parents (Groupe des personnages principaux) et Entités enfants (personnage et vassaux):
+
+- Groupe de Lyn
+    - Lyndis
+    - Sain
+    - Kent
+    - Wallace
+
+- Groupe d'Eliwood
+    - Eliwood
+    - Marcus
+    - Lowen
+    - Isadora
+
+- Groupe d'Hector
+    - Hector
+    - Matthew
+    - Serra
+    - Oswin

@@ -1,0 +1,10 @@
+body {
+  background: url(images/bg.png) fixed;
+  background-size: cover;
+}
+
+main {
+  height: 100vh;
+  background-color: #6e2b0c;
+  margin: 5% 0;
+}
