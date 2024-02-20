@@ -1,10 +1,27 @@
+/*Les classes sont en majuscules pour les différencier de ceux de bootstrap dans l'html*/
+
+:root{
+  font-size: 62.5%;
+}
+
 body {
   background: url(images/bg.png) fixed;
   background-size: cover;
 }
 
 main {
-  height: 100vh;
-  background-color: #6e2b0c;
+  background-color: #6e2b0c9f;
   margin: 5% 0;
+  font-size: 1.4rem;
 }
+
+h1 {
+  padding: 3% 0 3% 4%;
+  font-size: 4rem;
+}
+
+.ROSTER {
+  padding: 0 5%;
+  padding-bottom: 5%;
+}
+
