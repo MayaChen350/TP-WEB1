@@ -33,6 +33,13 @@ h1 {
   }
 }
 
+/* Ces classes sont pour enlever les modifications bootstrap*/
+.RESET-BTN {
+  color: inherit !important;
+  background: none !important;
+  border: none !important;
+}
+
 /*CLASSES BOOTSTRAP MODIFIÉS*/
 
 .btn {
