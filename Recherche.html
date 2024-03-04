@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Équipe de Lyn</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!--Les classes en majuscules sont personalisées et ne font pas partie de bootstrap-->
+  </head>
+  <body>
+    <main class="container text-light rounded-4 p-5">
+      <header>
+        <h1>Liste des personnages</h1>
+      </header>
+      <div class="d-flex">
+        <div class="row text-center">
+          <a class="RESET-A row col-md-4" href="Detail.html">
+            <h2>Lyn</h2>
+            <img
+              class="border border-black"
+              src="images/Lyn.webp"
+              alt="Image de Lyn"
+            />
+            <p class="fs-3">Classe de base: Lord</p>
+          </a>
+          <a class="RESET-A row col-md-4" href="Detail.html">
+            <h2>Sain</h2>
+            <img
+              class="border border-black"
+              src="images/Sain.jpg"
+              alt="Image de Sain"
+            />
+            <p class="fs-3">Classe de base: Cavalier</p>
+          </a>
+          <a class="RESET-A row col-md-4" href="Detail.html">
+            <h2>Kent</h2>
+            <img
+              class="border border-black"
+              src="images/Just_Kent.jpg"
+              alt="Image de Kent"
+            />
+            <p class="fs-3">Classe de base: Cavalier</p>
+          </a>
+          <a class="RESET-A row col-md-4" href="Detail.html">
+            <h2>Wallace</h2>
+            <img
+              class="border border-black"
+              src="images/Wallace.webp"
+              alt="Image de Wallace"
+            />
+            <p class="fs-3">Classe de base: Knight</p>
+          </a>
+          <a class="RESET-A row col-md-4" href="Detail.html">
+            <h2>Lyn</h2>
+            <img
+              class="border border-black"
+              src="images/Hector.png"
+              alt="Image d'Hector"
+            />
+            <p class="fs-3">Classe de base: Lord</p>
+          </a>
+          <a class="RESET-A row col-md-4" href="Detail.html">
+            <h2>Sain</h2>
+            <img
+              class="border border-black"
+              src="images/Matthew.png"
+              alt="Image de Matthew"
+            />
+            <p class="fs-3">Classe de base: Thief</p>
+          </a>
+          <a class="RESET-A row col-md-4" href="Detail.html">
+            <h2>Kent</h2>
+            <img
+              class="border border-black"
+              src="images/Serra.jpg"
+              alt="Image de Serra"
+            />
+            <p class="fs-3">Classe de base: Cleric</p>
+          </a>
+          <a class="RESET-A row col-md-4" href="Detail.html">
+            <h2>Wallace</h2>
+            <img
+              class="border border-black"
+              src="images/Oswin.jpg"
+              alt="Image d'Oswin"
+            />
+            <p class="fs-3">Classe de base: Knight</p>
+          </a>
+          <a class="RESET-A row col-md-4" href="Detail.html">
+            <h2>Eliwood</h2>
+            <img
+              class="border border-black"
+              src="images/Eliwood.jpg"
+              alt="Image d'Eliwood"
+            />
+            <p class="fs-3">Classe de base: Lord</p>
+          </a>
+
+          <a class="RESET-A row col-md-4" href="Detail.html">
+            <h2>Marcus</h2>
+            <img
+              class="border border-black"
+              src="images/Marcus.webp"
+              alt="Image de Marcus"
+            />
+            <p class="fs-3">Classe de base: Paladin</p>
+          </a>
+
+          <a class="RESET-A row col-md-4" href="Detail.html">
+            <h2>Kent</h2>
+            <img
+              class="border border-black"
+              src="images/Lowen.webp"
+              alt="Image de Lowen"
+            />
+            <p class="fs-3">Classe de base: Cavalier</p>
+          </a>
+
+          <a class="RESET-A row col-md-4" href="Detail.html">
+            <h2>Wallace</h2>
+            <img
+              class="border border-black"
+              src="images/Isadora.jpeg"
+              alt="Image d'Oswin"
+            />
+            <p class="fs-3">Classe de base: Paladin</p>
+          </a>
+        </div>
+        <form
+          class="d-flex flex-column gap-4"
+          action="https://www.w3schools.com/action_page.php"
+          method="post"
+        >
+          <div>
+            <h3>Recherche par mots-clés</h3>
+            <input type="type" placeholder="Saisir un mot mots-clés" />
+          </div>
+
+          <div>
+            <h3>Niveau puissance</h3>
+            <div class="d-flex">
+              <input type="number" placeholder="Min" />
+              <input type="number" placeholder="Max" />
+            </div>
+          </div>
+
+          <div>
+            <h3>Personnage vedette</h3>
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Peu importe
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Peu importe</a></li>
+                <li><a class="dropdown-item" href="#">Oui</a></li>
+                <li><a class="dropdown-item" href="#">Non</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <h3>Clans</h3>
+            <div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  checked="true"
+                  id="Lyn-team"
+                />
+                <label class="form-check-label" for="Lyn-team"
+                  >Équipe de Lyn</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  checked="true"
+                  id="Eliwood-team"
+                />
+                <label class="form-check-label" for="Eliwood-team"
+                  >Équipe d'Eliwood</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  checked="true"
+                  id="Hector-team"
+                />
+                <label class="form-check-label" for="Hector-team"
+                  >Équipe d'Hector</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-between">
+            <button class="btn btn-secondary" type="button">Effacer</button>
+            <button class="btn btn-primary bg-primary" type="button">
+              Rechercher
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

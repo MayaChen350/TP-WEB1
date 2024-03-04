@@ -40,6 +40,11 @@ h1 {
   border: none !important;
 }
 
+.RESET-A {
+  color: inherit !important;
+  text-decoration: inherit !important;
+}
+
 /*CLASSES BOOTSTRAP MODIFIÉS*/
 
 .btn {
