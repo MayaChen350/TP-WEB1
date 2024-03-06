@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,19 +10,26 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <!--Les classes en majuscules sont personalisées et ne font pas partie de bootstrap-->
   </head>
   <body>
+    <header>
+      <ul class="d-flex list-unstyled justify-content-end gap-4 p-3 fs-1">
+        <li>Accueil</li>
+        <li>Recherche</li>
+        <li>Favoris</li>
+      </ul>
+    </header>
     <main class="container text-light rounded-4 p-3">
-      <header>
-        <h1>Rosters de Fire Emblem 7</h1>
-      </header>
+      <h1>Rosters de Fire Emblem 7</h1>
       <div class="container col row text-center">
         <div class="ROSTER col">
           <h2 class="p-3">Lyn</h2>
           <img class="pb-4" src="images/Lyn_Cutscene.png" alt="Image de Lyn" />
-          <a class="btn d-block btn-primary mb-4">Parcourir</a>
+          <a href="Recherche.html" class="btn d-block btn-primary mb-4"
+            >Parcourir</a
+          >
           <ul class="text-start">
             <li>4 personnages</li>
             <li>Disponibles à la première partie du jeu</li>
@@ -47,7 +54,9 @@
             src="images/Eliwoood_Cutscene.png"
             alt="Image d'Eliwood"
           />
-          <a class="btn d-block btn-primary mb-4">Parcourir</a>
+          <a href="Recherche.html" class="btn d-block btn-primary mb-4"
+            >Parcourir</a
+          >
           <ul class="text-start">
             <li>4 personnages</li>
             <li>Disponibles à la deuxième partie du jeu</li>
@@ -74,7 +83,9 @@
             src="images/Hector_Cutscene.png"
             alt="Image d'Hector"
           />
-          <a class="btn d-block btn-primary mb-4">Parcourir</a>
+          <a href="Recherche.html" class="btn d-block btn-primary mb-4"
+            >Parcourir</a
+          >
           <ul class="text-start">
             <li>4 personnages</li>
             <li>Disponibles à la deuxième et troisième partie du jeu</li>
