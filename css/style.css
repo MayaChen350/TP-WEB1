@@ -1,3 +1,13 @@
+/*Animations*/
+@keyframes fade-in {
+  from {
+    opacity: 0 /*Change l'opacité de l'image*/;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /*Les classes sont en majuscules pour les différencier de ceux de bootstrap dans l'html*/
 
 :root {
@@ -22,9 +32,34 @@ main {
   font-size: 1.4rem;
 }
 
-h1 {
+main > h1 /*Pour éviter les erreurs*/ {
   padding: 25px 0 25px 30px;
   font-size: 4rem;
+}
+
+h2 ~ img {
+  animation-name: fade-in /*Utilisé pour utiliser une animation définis*/;
+  animation-duration: 2.5s /*Utilisé pour définir le temps de l'animation*/;
+  transition: all 30ms;
+}
+
+form .DERNIER-BOUTONS button:nth-child(1) {
+  position: relative;
+  top: 1.9rem;
+  right: 2.2rem;
+  padding: 1.5rem;
+}
+
+form .DERNIER-BOUTONS button:nth-child(2) {
+  position: relative;
+  top: 1.9rem;
+  left: 2.2rem;
+  padding: 1.5rem;
+}
+
+a > img:hover {
+  filter: brightness(110%)
+    /*Cela va changer la luminosité de l'image, dans ce cas-ci l'augmenter*/;
 }
 
 .ROSTER {
@@ -32,22 +67,32 @@ h1 {
   padding-bottom: 75px;
 }
 
+.FOLLOW {
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
 /* Media queries*/
 @media screen and (max-width: 768px) {
+  header {
+    position: initial;
+  }
+
   .ROSTER {
     padding: 0 0;
     padding-bottom: 5px;
   }
 }
 
-/* Ces classes sont pour enlever les modifications bootstrap*/
-.RESET-BTN {
+/* Ces classes sont pour enlever les modifications bootstrap ou définis de base pour la page*/
+.btn.RESET-BTN /*Pour éviter les erreurs*/ {
   color: inherit !important;
   background: none !important;
   border: none !important;
 }
 
-.RESET-A {
+a.RESET-A  /*Pour éviter les erreurs*/ {
   color: inherit !important;
   text-decoration: inherit !important;
 }

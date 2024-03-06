@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>FE7 TP1</title>
+    <title>Détails</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,11 +14,37 @@
     <!--Les classes en majuscules sont personalisées et ne font pas partie de bootstrap-->
   </head>
   <body>
+    <header class="container-fluid">
+      <ul class="d-flex list-unstyled justify-content-end gap-5 p-3 fs-1">
+        <li>
+          <a class="RESET-A" href="Accueil.html"
+            ><i class="fa-solid fa-house"></i> Accueil</a
+          >
+        </li>
+        <li>
+          <a class="RESET-A" href="Recherche.html"
+            ><i class="fa-solid fa-magnifying-glass"></i> Recherche</a
+          >
+        </li>
+        <li>
+          <a class="RESET-A" href="Favoris.html"
+            ><i class="fa-solid fa-star"></i> Favoris</a
+          >
+        </li>
+        <li>
+          <a id="btn-imprimer" class="RESET-A" href="#">
+            <i class="fa-solid fa-print"></i> Imprimer
+          </a>
+        </li>
+      </ul>
+    </header>
     <main class="container text-light rounded-4 p-3">
-      <header>
-        <h1 class="text-uppercase">Détail du personnage</h1>
-      </header>
-
+      <h1 class="text-uppercase">Détail du personnage</h1>
+      <p class="badge">
+        Pour ajouter en favori, cliquer sur le bouton ou appuyer sur
+        <kbd>CTRL + ALT + F</kbd>
+      </p>
+      <!--La balise kbd est utilisée notamment pour les entrées du claviers.-->
       <div class="d-flex gap-4">
         <div class="card" style="width: 41rem">
           <img src="images/Lyn.webp" class="card-img-top" alt="Image de Lyn" />
@@ -39,11 +65,65 @@
           />
         </div>
       </div>
+      <cite class="fs-2">"As if I'd lose!"</cite>
+      <!--Utilisé pour les citations-->
+      <footer class="pt-3">
+        <h2>Sources des images</h2>
+        <button
+          type="button"
+          class="RESET-BTN btn text-decoration-underline"
+          data-bs-toggle="popover"
+          data-bs-trigger="hover"
+          data-bs-title="Source"
+          data-bs-content="Fanart par kaejunni. (Cliquer pour le lien)"
+        >
+          <a class="text-light" href="https://danbooru.donmai.us/posts/3292291"
+            >Lyn (Principal)</a
+          >
+        </button>
+        <button
+          type="button"
+          class="RESET-BTN btn text-decoration-underline"
+          data-bs-toggle="popover"
+          data-bs-trigger="hover"
+          data-bs-title="Source"
+          data-bs-content="Animation de combat de sa classe avancée dans le jeu Fire Emblem 7, d'origine sur la Game Boy Advance. (Cliquer pour le lien)"
+        >
+          <a
+            class="text-light"
+            href="hhttps://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/12e22940-f893-49db-8c80-1097e26ca19e/d7nkzjo-367786ef-951e-43ad-b96f-5e9d79e6dd4e.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzEyZTIyOTQwLWY4OTMtNDlkYi04YzgwLTEwOTdlMjZjYTE5ZVwvZDdua3pqby0zNjc3ODZlZi05NTFlLTQzYWQtYjk2Zi01ZTlkNzllNmRkNGUuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.dH1ZL4e5vOBV5pPkTByBqfxe2vdJd7MlipLE0rIv2bo"
+            >Lyn (Animée)</a
+          >
+        </button>
+      </footer>
     </main>
+    <!--Trouvé comment faire les popovers sur ceci https://getbootstrap.com/docs/5.3/components/popovers/-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script>
+      const popoverTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="popover"]'
+      );
+      const popoverList = [...popoverTriggerList].map(
+        (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
+      );
+    </script>
+    <script
+      src="https://kit.fontawesome.com/cfe5c66e30.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Extra javascript que j'ai rajouté pour servir à une icône de FontAwesome
+      document
+        .getElementById("btn-imprimer")
+        .addEventListener("click", (event) => {
+          event.preventDefault();
+          print();
+        });
+    </script>
   </body>
 </html>
