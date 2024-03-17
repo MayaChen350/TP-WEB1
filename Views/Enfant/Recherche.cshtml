@@ -1,0 +1,297 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<h1>Liste des personnages</h1>
+<div class="d-flex">
+    <div class="row text-center">
+        <a class="RESET-A row col-md-4" href="Detail">
+            <h2>Lyn</h2>
+            <img class="border border-black"
+                 src="/images/Lyn.webp"
+                 alt="Image de Lyn" />
+            <p class="fs-3">Classe de base: Lord</p>
+        </a>
+        <a class="RESET-A row col-md-4" href="Detail">
+            <h2>Sain</h2>
+            <img class="border border-black"
+                 src="/images/Sain.jpg"
+                 alt="Image de Sain" />
+            <p class="fs-3">Classe de base: Cavalier</p>
+        </a>
+        <a class="RESET-A row col-md-4" href="Detail">
+            <h2>Kent</h2>
+            <img class="border border-black"
+                 src="/images/Just_Kent.jpg"
+                 alt="Image de Kent" />
+            <p class="fs-3">Classe de base: Cavalier</p>
+        </a>
+        <a class="RESET-A row col-md-4" href="Detail">
+            <h2>Wallace</h2>
+            <img class="border border-black"
+                 src="/images/Wallace.webp"
+                 alt="Image de Wallace" />
+            <p class="fs-3">Classe de base: Knight</p>
+        </a>
+        <a class="RESET-A row col-md-4" href="Detail">
+            <h2>Hector</h2>
+            <img class="border border-black"
+                 src="/images/Hector.png"
+                 alt="Image d'Hector" />
+            <p class="fs-3">Classe de base: Lord</p>
+        </a>
+        <a class="RESET-A row col-md-4" href="Detail">
+            <h2>Matthew</h2>
+            <img class="border border-black"
+                 src="/images/Matthew.png"
+                 alt="Image de Matthew" />
+            <p class="fs-3">Classe de base: Thief</p>
+        </a>
+        <a class="RESET-A row col-md-4" href="Detail">
+            <h2>Serra</h2>
+            <img class="border border-black"
+                 src="/images/Serra.jpg"
+                 alt="Image de Serra" />
+            <p class="fs-3">Classe de base: Cleric</p>
+        </a>
+        <a class="RESET-A row col-md-4" href="Detail">
+            <h2>Oswin</h2>
+            <img class="border border-black"
+                 src="/images/Oswin.jpg"
+                 alt="Image d'Oswin" />
+            <p class="fs-3">Classe de base: Knight</p>
+        </a>
+        <a class="RESET-A row col-md-4" href="Detail">
+            <h2>Eliwood</h2>
+            <img class="border border-black"
+                 src="/images/Eliwood.jpg"
+                 alt="Image d'Eliwood" />
+            <p class="fs-3">Classe de base: Lord</p>
+        </a>
+
+        <a class="RESET-A row col-md-4" href="Detail">
+            <h2>Marcus</h2>
+            <img class="border border-black"
+                 src="/images/Marcus.webp"
+                 alt="Image de Marcus" />
+            <p class="fs-3">Classe de base: Paladin</p>
+        </a>
+
+        <a class="RESET-A row col-md-4" href="Detail">
+            <h2>Kent</h2>
+            <img class="border border-black"
+                 src="/images/Lowen.webp"
+                 alt="Image de Lowen" />
+            <p class="fs-3">Classe de base: Cavalier</p>
+        </a>
+
+        <a class="RESET-A row col-md-4" href="Detail">
+            <h2>Wallace</h2>
+            <img class="border border-black"
+                 src="/images/Isadora.jpeg"
+                 alt="Image d'Oswin" />
+            <p class="fs-3">Classe de base: Paladin</p>
+        </a>
+    </div>
+    <div class="accordion FOLLOW bg-dark rounded-2" id="accordionSearch">
+        <div class="accordion-item bg-dark">
+            <h2 class="accordion-header">
+                <button class="accordion-button bg-dark-subtle"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne">
+                    Recherche
+                </button>
+            </h2>
+            <div id="collapseOne"
+                 class="accordion-collapse collapse show"
+                 data-bs-parent="#accordionSearch">
+                <div class="accordion-body">
+                    <form class="d-flex flex-column gap-4 bg-dark p-3 text-white"
+                          action="https://www.w3schools.com/action_page.php"
+                          method="post">
+                        <div>
+                            <h3>Recherche par mots-clés</h3>
+                            <input type="type" placeholder="Saisir un mot mots-clés" />
+                        </div>
+
+                        <div>
+                            <h3>Stats totaux</h3>
+                            <div class="d-flex">
+                                <input type="number" placeholder="Min" />
+                                <input type="number" placeholder="Max" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3>Personnage vedette</h3>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle"
+                                        type="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                    Peu importe
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="#">Peu importe</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Oui</a></li>
+                                    <li><a class="dropdown-item" href="#">Non</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3>Équipe</h3>
+                            <div>
+                                <div class="form-check">
+                                    <input class="form-check-input"
+                                           type="checkbox"
+                                           checked="true"
+                                           id="Lyn-team" />
+                                    <label class="form-check-label" for="Lyn-team">Équipe de Lyn</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input"
+                                           type="checkbox"
+                                           checked="true"
+                                           id="Eliwood-team" />
+                                    <label class="form-check-label" for="Eliwood-team">Équipe d'Eliwood</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input"
+                                           type="checkbox"
+                                           checked="true"
+                                           id="Hector-team" />
+                                    <label class="form-check-label" for="Hector-team">Équipe d'Hector</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between DERNIER-BOUTONS">
+                            <button class="btn btn-secondary rounded-0" type="button">
+                                Effacer
+                            </button>
+                            <button class="btn btn-primary bg-primary" type="button">
+                                Rechercher
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <h2>Sources des images</h2>
+    <button type="button"
+            class="RESET-BTN btn text-decoration-underline"
+            data-bs-toggle="popover"
+            data-bs-trigger="hover"
+            data-bs-title="Source"
+            data-bs-content="Fanart par kaejunni.(Cliquer pour le lien)">
+        <a class="text-light" href="https://danbooru.donmai.us/posts/3292291">Lyn</a>
+    </button>
+    <button type="button"
+            class="RESET-BTN btn text-decoration-underline"
+            data-bs-toggle="popover"
+            data-bs-trigger="hover"
+            data-bs-title="Source"
+            data-bs-content="Artwork pour le jeu Fire Emblem Cipher par Nekobayash. (Cliquer pour le lien)">
+        <a class="text-light"
+           href="https://fireemblem.fandom.com/wiki/Sain/Gallery?file=B07-014N_artwork.png">Sain</a>
+    </button>
+    <button type="button"
+            class="RESET-BTN btn text-decoration-underline"
+            data-bs-toggle="popover"
+            data-bs-trigger="hover"
+            data-bs-title="Source"
+            data-bs-content="Artwork #4 officiel de Fire Emblem 7 venant du jeu, découpé sur Kent. (Cliquer pour le lien) ">
+        <a class="text-light"
+           href="https://serenesforest.net/blazing-sword/miscellaneous/cgs/">Kent</a>
+    </button>
+    <button type="button"
+            class="RESET-BTN btn text-decoration-underline"
+            data-bs-toggle="popover"
+            data-bs-trigger="hover"
+            data-bs-title="Source"
+            data-bs-content="Artwork pour le jeu Fire Emblem Cipher par Mineri. (Cliquer pour le lien)">
+        <a class="text-light"
+           href="https://fireemblem.fandom.com/wiki/Wallace/Gallery?file=B21-060HN_artwork.png/">Wallace</a>
+    </button>
+    <button type="button"
+            class="RESET-BTN btn text-decoration-underline"
+            data-bs-toggle="popover"
+            data-bs-trigger="hover"
+            data-bs-title="Source"
+            data-bs-content="Image créee par intelligence artificiel sur pixai.art (Cliquer pour le lien)">
+        <a class="text-light"
+           href="https://pixai.art/model/1678066113063153096?lang=fr">Hector</a>
+    </button>
+    <button type="button"
+            class="RESET-BTN btn text-decoration-underline"
+            data-bs-toggle="popover"
+            data-bs-trigger="hover"
+            data-bs-title="Source"
+            data-bs-content="Fanart sur Deviantart.com par Fishenode. (Cliquer pour le lien)">
+        <a class="text-light"
+           href="https://www.deviantart.com/fishenod/art/Ositia-s-Best-392523031">Matthew</a>
+    </button>
+    <button type="button"
+            class="RESET-BTN btn text-decoration-underline"
+            data-bs-toggle="popover"
+            data-bs-trigger="hover"
+            data-bs-title="Source"
+            data-bs-content="Artwork pour le jeu Fire Emblem Cipher par 40hara. (Cliquer pour le lien)">
+        <a class="text-light"
+           href="https://fireemblem.fandom.com/wiki/Serra/Gallery?file=B07-018N_artwork.png">Serra</a>
+    </button>
+    <button type="button"
+            class="RESET-BTN btn text-decoration-underline"
+            data-bs-toggle="popover"
+            data-bs-trigger="hover"
+            data-bs-title="Source"
+            data-bs-content="Artwork pour le jeu Fire Emblem Cipher par Yoneko. (Cliquer pour le lien)">
+        <a class="text-light"
+           href="https://fireemblem.fandom.com/wiki/Oswin?file=B07-027N_artwork.png">Oswin</a>
+    </button>
+    <button type="button"
+            class="RESET-BTN btn text-decoration-underline"
+            data-bs-toggle="popover"
+            data-bs-trigger="hover"
+            data-bs-title="Source"
+            data-bs-content="Artwork pour le jeu Fire Emblem Cipher par Sachiko Wada. (Cliquer pour le lien)">
+        <a class="text-light"
+           href="https://serenesforest.net/2016/11/11/cipher-s7-weekly-recap-new-reveals-and-text-free-artwork/">Eliwood</a>
+    </button>
+    <button type="button"
+            class="RESET-BTN btn text-decoration-underline"
+            data-bs-toggle="popover"
+            data-bs-trigger="hover"
+            data-bs-title="Source"
+            data-bs-content="Artwork pour le jeu Fire Emblem Cipher par Sachie. (Cliquer pour le lien)">
+        <a class="text-light"
+           href="https://fireemblem.fandom.com/wiki/Marcus/Gallery?file=S10-005ST_artwork.png">Marcus</a>
+    </button>
+    <button type="button"
+            class="RESET-BTN btn text-decoration-underline"
+            data-bs-toggle="popover"
+            data-bs-trigger="hover"
+            data-bs-title="Source"
+            data-bs-content="Artwork pour le jeu Fire Emblem Cipher par un auteur ou une autrice inconnue. (Cliquer pour le lien)">
+        <a class="text-light"
+           href="https://fireemblem.fandom.com/wiki/Lowen?file=B13-018N_artwork.png#Fire_Emblem_0_(Cipher)">Lowen</a>
+    </button>
+    <button type="button"
+            class="RESET-BTN btn text-decoration-underline"
+            data-bs-toggle="popover"
+            data-bs-trigger="hover"
+            data-bs-title="Source"
+            data-bs-content="Image créee par intelligence artificiel, généré par la demande de l'utilisateur LordOtako sur Civitai. (Cliquer pour le lien)">
+        <a class="text-light" href="https://civitai.com/images/2730039">Isadora</a>
+    </button>
+</footer>

@@ -15,7 +15,7 @@
 }
 
 body {
-  background: url(../images/bg.png) fixed;
+  background: url(/images/bg.png) fixed;
   background-size: cover;
 }
 
