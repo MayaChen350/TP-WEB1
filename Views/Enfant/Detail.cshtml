@@ -15,7 +15,10 @@
     <div class="card" style="width: 41rem">
         <img src="@Model.LienImage" class="card-img-top" alt="Image de @Model.Nom" />
         <div class="card-body bg-dark text-light">
-            <h5 class="card-title text-uppercase fs-1">Personnage vedette</h5>
+            @if (Model.PersonnageVedette)
+            {
+                <h5 class="card-title text-uppercase fs-1">Personnage vedette</h5>
+            }
             <btn class="btn btn-primary text-uppercase">Favoris +</btn>
         </div>
     </div>
@@ -49,5 +52,5 @@
             data-bs-trigger="hover"
             data-bs-title="Source"
             data-bs-content="Animation de combat d'une de ses classes dans le jeu Fire Emblem 7, d'origine sur la Game Boy Advance.">
-       </button>
+    </button>
 </footer>
