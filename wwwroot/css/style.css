@@ -73,6 +73,12 @@ a > img:hover {
   position: fixed;
 }
 
+.GIFS-ANIMÉS {
+    max-width: 970px;
+    max-height: 670px;
+    height: auto;
+}
+
 /* Media queries*/
 @media screen and (max-width: 768px) {
   header {

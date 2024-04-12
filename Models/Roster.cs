@@ -27,7 +27,7 @@
         /// </summary>
         public string LienImage
         {
-            get => $"/images/Cutscene/{Nom}_Cutscene.png";
+            get => $"/images/Cutscenes/{Nom}_Cutscene.png";
         }
 
         /// <summary>

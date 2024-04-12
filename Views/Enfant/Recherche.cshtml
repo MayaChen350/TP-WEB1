@@ -10,7 +10,7 @@
     <div class="row text-center">
         @foreach (var p in Model)
         {
-            <a class="RESET-A row col-md-4" href="Detail">
+            <a class="RESET-A row col-md-4" href="Detail/@p.Id">
                 <h2>@p.Nom</h2>
                 <img class="border border-black"
                      src="@p.LienImage"
@@ -122,7 +122,7 @@
             data-bs-trigger="hover"
             data-bs-title="Source"
             data-bs-content="@p.SourceImagePrincipal (Cliquer pour le lien)">
-        <a class="text-light" href="@p.LienSourceImage">Lyn</a>
+        <a class="text-light" href="@p.LienSourceImage">@p.Nom</a>
     </button>
     }
 </footer>

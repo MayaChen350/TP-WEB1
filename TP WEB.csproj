@@ -28,7 +28,7 @@
     <Content Update="wwwroot\images\Portraits\Eliwood.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Update="wwwroot\images\Cutscenes\Eliwoood_Cutscene.png">
+    <Content Update="wwwroot\images\Cutscenes\Eliwood_Cutscene.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Update="wwwroot\images\Extras\Fire_Emblem_The_Blazing_Blade_Logo.webp">

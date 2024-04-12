@@ -1,4 +1,6 @@
-﻿namespace TP_WEB.Models
+﻿using System.Reflection;
+
+namespace TP_WEB.Models
 {
     /// <summary>
     /// Personnage de Fire Emblem 7 d'un roster.
@@ -54,6 +56,24 @@
         }
 
         /// <summary>
+        /// Retourne une ligne avec toutes les classes.
+        /// </summary>
+        public string LigneClasses
+        {
+            get
+            {
+                string ligne = "";
+                for (int i = 0; i < Classes.Length; i++)
+                {
+                    ligne += Classes[i];
+                    if (i != Classes.Length - 1)
+                        ligne += ", ";
+                }
+                return ligne;
+            }
+        }
+
+        /// <summary>
         /// Ligne de toutes les armes utilisés séparés par une virgule.
         /// </summary>
         public string ChaineArmesUtilisees
@@ -64,12 +84,32 @@
             }
         }
 
+
         /// <summary>
         /// Liste des armes utilisées par le personnage.
         /// </summary>
         public string[] ArmesUtilisees
         {
             get => chaineArmesUtilisees.Split(',');
+        }
+
+
+        /// <summary>
+        /// Retourne une ligne avec toutes les armes utilisées.
+        /// </summary>
+        public string LigneArmes
+        {
+            get
+            {
+                string ligne = "";
+                for (int i = 0; i < ArmesUtilisees.Length; i++)
+                {
+                    ligne += ArmesUtilisees[i];
+                    if (i != ArmesUtilisees.Length - 1)
+                        ligne += ", ";
+                }
+                return ligne;
+            }
         }
 
         /// <summary>
@@ -94,7 +134,7 @@
         }
 
         /// <summary>
-        /// La source de l'image de portrait du personnage.
+        /// Le texte de source de l'image de portrait du personnage.
         /// </summary>
         public string SourceImagePrincipal { get; set; }
 

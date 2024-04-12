@@ -17,8 +17,18 @@ namespace TP_WEB.Controllers
             return View(_baseDeDonnees.Personnages.ToList());
         }
 
-        public IActionResult Detail()
+        public IActionResult Detail(int id)
         {
+            var personnageRecherché = _baseDeDonnees.Personnages.Where(p => p.Id == id).SingleOrDefault();
+            if (personnageRecherché == null)
+            {
+                return View("NonTrouvé", "Il n'y a malheureusement que 12 personnages sur ce site, réessayez avec 5 par exemple, mais pas en haut de 12.");
+            }
+            else
+            {
+                return View(personnageRecherché);
+            }
+
             return View();
         }
     }
