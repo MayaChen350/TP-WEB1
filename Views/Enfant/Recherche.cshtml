@@ -1,14 +1,9 @@
-﻿@using TP_WEB.Models
-@model List<Personnage>
-
-@{
-    Layout = "_Layout";
-}
+﻿@model PageRechercheViewModel
 
 <h1>Liste des personnages</h1>
 <div class="d-flex">
     <div class="row text-center">
-        @foreach (var p in Model)
+        @foreach (var p in Model.Resultat)
         {
             <a class="RESET-A row col-md-4" href="Detail/@p.Id">
                 <h2>@p.Nom</h2>
@@ -40,34 +35,24 @@
                           method="post">
                         <div>
                             <h3>Recherche par mots-clés</h3>
-                            <input type="type" placeholder="Saisir un mot mots-clés" />
+                            <input type="text" name="MotCles" placeholder="Saisir un mot mots-clés" />
                         </div>
 
                         <div>
                             <h3>Stats totaux</h3>
                             <div class="d-flex">
-                                <input type="number" placeholder="Min" />
-                                <input type="number" placeholder="Max" />
+                                <input type="number" name="StatsMin" value="@Model.Criteres.StatsMin" placeholder="Min" />
+                                <input type="number" name="StatsMax" value="@Model.Criteres.StatsMax" placeholder="Max" />
                             </div>
                         </div>
 
                         <div>
                             <h3>Personnage vedette</h3>
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle"
-                                        type="button"
-                                        data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                    Peu importe
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item" href="#">Peu importe</a>
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Oui</a></li>
-                                    <li><a class="dropdown-item" href="#">Non</a></li>
-                                </ul>
-                            </div>
+                            <select name="SiPersonnageVedette">
+                                <option value="@enumPersonnageVedette.PeuImporte" @Model.Criteres.SelectedOuNon(@enumPersonnageVedette.PeuImporte) class="dropdown-item">Peu importe</option>
+                                <option value="@enumPersonnageVedette.Oui" @Model.Criteres.SelectedOuNon(@enumPersonnageVedette.Oui) class="dropdown-item">Oui</option>
+                                <option value="@enumPersonnageVedette.Non" @Model.Criteres.SelectedOuNon(@enumPersonnageVedette.Non) class="dropdown-item">Non</option>
+                            </select>
                         </div>
 
                         <div>
@@ -75,22 +60,25 @@
                             <div>
                                 <div class="form-check">
                                     <input class="form-check-input"
+                                    @Model.Criteres.CheckedOuNon(Model.Criteres.AvecLyn)
+                                           name="AvecLyn"
                                            type="checkbox"
-                                           checked="true"
                                            id="Lyn-team" />
                                     <label class="form-check-label" for="Lyn-team">Équipe de Lyn</label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input"
-                                           type="checkbox"
-                                           checked="true"
+                                    @Model.Criteres.CheckedOuNon(Model.Criteres.AvecEliwood)
+                                           name="AvecEliwood"
+                                           type="checkbox"                                           
                                            id="Eliwood-team" />
                                     <label class="form-check-label" for="Eliwood-team">Équipe d'Eliwood</label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input"
-                                           type="checkbox"
-                                           checked="true"
+                                    @Model.Criteres.CheckedOuNon(Model.Criteres.AvecHector)
+                                           name="AvecHector"
+                                           type="checkbox"                                         
                                            id="Hector-team" />
                                     <label class="form-check-label" for="Hector-team">Équipe d'Hector</label>
                                 </div>
@@ -114,15 +102,15 @@
 
 <footer>
     <h2>Sources des images</h2>
-    @foreach (var p in Model)
+    @foreach (var p in Model.Resultat)
     {
-    <button type="button"
-            class="RESET-BTN btn text-decoration-underline"
-            data-bs-toggle="popover"
-            data-bs-trigger="hover"
-            data-bs-title="Source"
-            data-bs-content="@p.SourceImagePrincipal (Cliquer pour le lien)">
-        <a class="text-light" href="@p.LienSourceImage">@p.Nom</a>
-    </button>
+        <button type="button"
+                class="RESET-BTN btn text-decoration-underline"
+                data-bs-toggle="popover"
+                data-bs-trigger="hover"
+                data-bs-title="Source"
+                data-bs-content="@p.SourceImagePrincipal (Cliquer pour le lien)">
+            <a class="text-light" href="@p.LienSourceImage">@p.Nom</a>
+        </button>
     }
 </footer>
