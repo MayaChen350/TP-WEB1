@@ -25,40 +25,40 @@
     <Content Update="wwwroot\images\bg.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Update="wwwroot\images\Eliwood.jpg">
+    <Content Update="wwwroot\images\Portraits\Eliwood.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Update="wwwroot\images\Eliwoood_Cutscene.png">
+    <Content Update="wwwroot\images\Cutscenes\Eliwoood_Cutscene.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Update="wwwroot\images\Fire_Emblem_The_Blazing_Blade_Logo.webp">
+    <Content Update="wwwroot\images\Extras\Fire_Emblem_The_Blazing_Blade_Logo.webp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Update="wwwroot\images\Hector_Cutscene.png">
+    <Content Update="wwwroot\images\Cutscenes\Hector_Cutscene.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Update="wwwroot\images\Isadora.jpg">
+    <Content Update="wwwroot\images\Portraits\Isadora.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Update="wwwroot\images\Just_Kent.jpg">
+    <Content Update="wwwroot\images\Portraits\Kent.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Update="wwwroot\images\Lyn_Cutscene.png">
+    <Content Update="wwwroot\images\Cutscenes\Lyn_Cutscene.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Update="wwwroot\images\Matthew.jpg">
+    <Content Update="wwwroot\images\Portraits\Matthew.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Update="wwwroot\images\Oswin.jpg">
+    <Content Update="wwwroot\images\Portraits\Oswin.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Update="wwwroot\images\Sain&amp;Kent.jpg">
+    <Content Update="wwwroot\images\Extras\Sain&amp;Kent.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Update="wwwroot\images\Sain.jpg">
+    <Content Update="wwwroot\images\Portraits\Sain.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Update="wwwroot\images\Serra.jpg">
+    <Content Update="wwwroot\images\Portraits\Serra.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
