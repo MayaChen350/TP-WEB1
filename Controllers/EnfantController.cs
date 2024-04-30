@@ -68,5 +68,35 @@ namespace TP_WEB.Controllers
                 return View("Detail", personnageRecherché);
             }
         }
+
+        public IActionResult Filtrer(CritereRechercheViewModel criteres)
+        {
+            IEnumerable<Personnage> donnees = _baseDeDonnees.Personnages;
+
+            foreach (string motCle in criteres.MotCles)
+                donnees = donnees.Where(p => p.Nom.Contains(motCle) || p.Roster.Nom.Contains(motCle) || p.LigneArmes.Contains(motCle) || p.LigneClasses.Contains(motCle) || p.Citation.Contains(motCle) || p.SourceImagePrincipal.Contains(motCle));
+
+            donnees = donnees.Where(p => p.StatsDeBaseTotaux < criteres.StatsMax && p.StatsDeBaseTotaux > criteres.StatsMin);
+
+
+            switch (criteres.PersonnageVedette)
+            {
+                case enumPersonnageVedette.Non:
+                    donnees = donnees.Where(p => !p.PersonnageVedette);
+                    break;
+                case enumPersonnageVedette.Oui:
+                    donnees = donnees.Where(p => p.PersonnageVedette);
+                    break;
+                default: // case enumPersonnageVedette.PeuImporte:
+                    break;
+            }
+
+            donnees = donnees.Where(p => (criteres.AvecLyn && p.Roster.Id == 3) || (criteres.AvecEliwood && p.Roster.Id == 2) || (criteres.AvecHector && p.Roster.Id == 3));
+
+            PageRechercheViewModel filtre = new PageRechercheViewModel() { Criteres = criteres, Resultat = donnees.ToList() };
+
+            return View(filtre);
+
+        }
     }
 }

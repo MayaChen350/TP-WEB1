@@ -32,6 +32,11 @@ namespace TP_WEB.Models
         public string Nom { get; set; }
 
         /// <summary>
+        /// Stats de bases totaux du personnage.
+        /// </summary>
+        public int StatsDeBaseTotaux { get; set; }
+
+        /// <summary>
         /// Si le personnage est un personnage vedette ou non.
         /// </summary>
         public bool PersonnageVedette { get; set; }
