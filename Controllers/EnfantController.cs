@@ -69,14 +69,19 @@ namespace TP_WEB.Controllers
             }
         }
 
+        [Route("enfant/filtrer")]
         public IActionResult Filtrer(CritereRechercheViewModel criteres)
         {
             IEnumerable<Personnage> donnees = _baseDeDonnees.Personnages;
 
-            foreach (string motCle in criteres.MotCles)
-                donnees = donnees.Where(p => p.Nom.Contains(motCle) || p.Roster.Nom.Contains(motCle) || p.LigneArmes.Contains(motCle) || p.LigneClasses.Contains(motCle) || p.Citation.Contains(motCle) || p.SourceImagePrincipal.Contains(motCle));
+            if (criteres.MotCles[0] != null)
+                foreach (string motCle in criteres.MotCles)
+                        donnees = donnees.Where(p => p.Nom.ToLower().Contains(motCle.ToLower()) || p.Roster.Nom.ToLower().Contains(motCle.ToLower()) || p.LigneArmes.ToLower().Contains(motCle.ToLower()) || p.LigneClasses.ToLower().Contains(motCle.ToLower()) || p.Citation.ToLower().Contains(motCle.ToLower()) || p.SourceImagePrincipal.ToLower().Contains(motCle.ToLower()));
 
-            donnees = donnees.Where(p => p.StatsDeBaseTotaux < criteres.StatsMax && p.StatsDeBaseTotaux > criteres.StatsMin);
+            if (criteres.StatsMax != null)
+                donnees = donnees.Where(p => p.StatsDeBaseTotaux < criteres.StatsMax);
+            if (criteres.StatsMin != null)
+                donnees = donnees.Where(p => p.StatsDeBaseTotaux > criteres.StatsMin);
 
 
             switch (criteres.PersonnageVedette)
@@ -91,7 +96,7 @@ namespace TP_WEB.Controllers
                     break;
             }
 
-            donnees = donnees.Where(p => (criteres.AvecLyn && p.Roster.Id == 3) || (criteres.AvecEliwood && p.Roster.Id == 2) || (criteres.AvecHector && p.Roster.Id == 3));
+            donnees = donnees.Where(p => (criteres.AvecLyn && p.Roster.Id == 1) || (criteres.AvecEliwood && p.Roster.Id == 2) || (criteres.AvecHector && p.Roster.Id == 3));
 
             PageRechercheViewModel filtre = new PageRechercheViewModel() { Criteres = criteres, Resultat = donnees.ToList() };
 

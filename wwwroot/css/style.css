@@ -43,14 +43,14 @@ h2 ~ img {
   transition: all 30ms;
 }
 
-form .DERNIER-BOUTONS button:nth-child(1) {
+form .DERNIER-BOUTONS input:nth-child(1) {
   position: relative;
   top: 1.9rem;
   right: 2.2rem;
   padding: 1.5rem;
 }
 
-form .DERNIER-BOUTONS button:nth-child(2) {
+form .DERNIER-BOUTONS input:nth-child(2) {
   position: relative;
   top: 1.9rem;
   left: 2.2rem;

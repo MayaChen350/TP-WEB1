@@ -4,6 +4,21 @@
     {
         public List<string>? MotCles { get; set; }
 
+        public string LigneMotCles
+        {
+            get
+            {
+                if (MotCles == null)
+                    return null;
+
+                string ligneMots = "";
+                foreach (string mot in MotCles)
+                    if (mot != null)
+                        ligneMots += mot + " ";
+                return ligneMots.Trim();
+            }
+        }
+
         public int? StatsMax { get; set; }
 
         public int? StatsMin { get; set; }
