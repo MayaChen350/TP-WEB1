@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TP_WEB.Extensions;
 using TP_WEB.Models;
 
 namespace TP_WEB.Controllers
@@ -16,6 +17,7 @@ namespace TP_WEB.Controllers
         [HttpGet]
         public ActionResult Delete(int id)
         {
+            List<int> list = HttpContext.Session.Get<List<int>>("enfantIds");
             var personnageRecherché = _baseDeDonnees.Personnages.Where(p => p.Id == id).SingleOrDefault();
 
             if (personnageRecherché != null)

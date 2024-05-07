@@ -1,10 +1,13 @@
-using Microsoft.AspNetCore.Builder;
 using TP_WEB.Models;
 
 var builder = WebApplication.CreateBuilder(args); // Crée une web app avec les paramètres envoyés
 builder.Services.AddControllersWithViews(); // Permet MVC
 builder.Services.AddRazorPages(); // Permet utilisation de Razor
 builder.Services.AddSingleton<BaseDeDonnees>();
+
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(option => { option.IdleTimeout = TimeSpan.FromMinutes(20); });
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -20,6 +23,7 @@ else
     app.UseStaticFiles();
 }
 
+app.UseSession();
 app.UseRouting();
 app.UseEndpoints(endpoints =>
 {
