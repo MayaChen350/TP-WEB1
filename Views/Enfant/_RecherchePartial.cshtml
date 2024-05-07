@@ -5,6 +5,7 @@
     <div class="row text-center">
         @foreach (var p in Model.Resultat)
         {
+            <a href="/GestionEnfant/Delete/@p.Id" class="btn-close" style="width: 0.5em;"></a> <!--La solution la plus rapide que j'avais-->
             <a class="RESET-A row col-md-4" href="Detail/@p.Id">
                 <h2>@p.Nom</h2>
                 <img class="border border-black"

@@ -13,7 +13,7 @@ namespace TP_WEB.Controllers
             _baseDeDonnees = baseDeDonnees;
         }
 
-        [Route("/GestionEnfant/Delete/{id:int}")]
+        [HttpGet]
         public ActionResult Delete(int id)
         {
             var personnageRecherché = _baseDeDonnees.Personnages.Where(p => p.Id == id).SingleOrDefault();
@@ -21,7 +21,7 @@ namespace TP_WEB.Controllers
             if (personnageRecherché != null)
                 return View(personnageRecherché);
             else
-                return View("NonTrouvé", "Il n'y a malheureusement que 12 personnages sur ce site, ce personnage n'est probablement pas là.");
+                return View("NonTrouvé", "Ce personnage n'est pas présent.");
         }
 
         // POST: GestionEnfantController/Delete/5
@@ -31,7 +31,11 @@ namespace TP_WEB.Controllers
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                var personnageRecherché = _baseDeDonnees.Personnages.Where(p => p.Id == id).Single();
+                personnageRecherché.Roster.Personnages.Remove(personnageRecherché);
+                _baseDeDonnees.Personnages.Remove(personnageRecherché);
+                return RedirectToAction("Index", "Home");
+
             }
             catch
             {

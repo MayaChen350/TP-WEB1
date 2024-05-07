@@ -1,4 +1,5 @@
 ﻿@model TP_WEB.Models.Personnage
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     ViewData["Title"] = "Supprimer";
@@ -48,7 +49,8 @@
         </dd>
     </dl>
     
-    <form asp-action="Delete">
+    <form asp-controller="GestionEnfant" asp-action="Delete" method="post">
+        <input type="hidden" value="@Model.Id" />
         <input type="submit" value="Supprimer" class="btn btn-danger" />
     </form>
 </div>
