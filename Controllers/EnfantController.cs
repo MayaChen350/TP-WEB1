@@ -72,8 +72,11 @@ namespace TP_WEB.Controllers
         [Route("enfant/filtrer")]
         public IActionResult Filtrer(CritereRechercheViewModel criteres)
         {
-            IEnumerable<Personnage> donnees = _baseDeDonnees.Personnages;
+            if (criteres == null || criteres.MotCles == null)
+                return RedirectToAction("Recherche");
 
+            IEnumerable<Personnage> donnees = _baseDeDonnees.Personnages;
+            
             if (criteres.MotCles[0] != null)
                 foreach (string motCle in criteres.MotCles)
                         donnees = donnees.Where(p => p.Nom.ToLower().Contains(motCle.ToLower()) || p.Roster.Nom.ToLower().Contains(motCle.ToLower()) || p.LigneArmes.ToLower().Contains(motCle.ToLower()) || p.LigneClasses.ToLower().Contains(motCle.ToLower()) || p.Citation.ToLower().Contains(motCle.ToLower()) || p.SourceImagePrincipal.ToLower().Contains(motCle.ToLower()));

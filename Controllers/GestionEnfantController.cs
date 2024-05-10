@@ -17,7 +17,6 @@ namespace TP_WEB.Controllers
         [HttpGet]
         public ActionResult Delete(int id)
         {
-            List<int> list = HttpContext.Session.Get<List<int>>("enfantIds");
             var personnageRecherché = _baseDeDonnees.Personnages.Where(p => p.Id == id).SingleOrDefault();
 
             if (personnageRecherché != null)

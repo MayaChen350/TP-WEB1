@@ -1,4 +1,6 @@
-﻿<h1 class="text-uppercase">Mes personnages favoris</h1>
+﻿@model List<Personnage>
+
+<h1 class="text-uppercase">Mes personnages favoris</h1>
 <p>
     Vous avez <span><b>1 personnage</b></span> en favoris! Bravo!
 </p>
@@ -8,17 +10,20 @@
             <th>Image</th>
             <th>Nom Personnage</th>
             <th>Classe de base</th>
-            <th></th>
+            <th>Stats de base totaux</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>
-                <img class="w-25" src="/images/Lyn.webp" alt="image de Lyn" />
-            </td>
-            <td>Lyn</td>
-            <td>Lord</td>
-            <td><img src="" alt="" /></td>
-        </tr>
+        @foreach (Personnage p in Model)
+        {
+            <tr>
+                <td>
+                    <img class="w-25" src="@p.LienImage" alt="image de @p.Nom" />
+                </td>
+                <td>@p.Nom</td>
+                <td>@p.Classes[0]</td>
+                <td>@p.StatsDeBaseTotaux</td>
+            </tr>
+        }
     </tbody>
 </table>
