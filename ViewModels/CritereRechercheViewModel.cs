@@ -32,7 +32,5 @@
         public bool AvecHector { get; set; }
 
         public string CheckedOuNon(bool avecQui) => avecQui ? "checked" : "";
-
-        public string SelectedOuNon(enumPersonnageVedette etatPersonnageVedette) => etatPersonnageVedette == PersonnageVedette ? "selected" : "";
     }
 }

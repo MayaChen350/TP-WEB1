@@ -15,13 +15,50 @@ namespace TP_WEB.Controllers
 
         public IActionResult Index()
         {
-            List<int> list = HttpContext.Session.Get<List<int>>("enfantIds");
-            return View(_baseDeDonnees.Personnages.Take(3).ToList());
+            var enfantIDs = HttpContext.Session.Get<List<int>>("enfantIds");
+            if (enfantIDs == null)
+            {
+                enfantIDs = new List<int>();
+            }
+
+            var enfantsDeLaBD = _baseDeDonnees.Personnages.Where(e => enfantIDs.Contains(e.Id)).ToList();
+
+            return View(enfantsDeLaBD);
         }
 
-        // public IActionResult AjouterUnEnfant(int id) { }
+        public IActionResult AjouterUnEnfant(int id)
+        {
+            var enfantIDs = HttpContext.Session.Get<List<int>>("enfantIds");
+            if (enfantIDs == null)
+            {
+                enfantIDs = new List<int>();
+            }
 
-        //public IActionResult SupprimerUnEnfant(int id) { }
+            if (!enfantIDs.Contains(id))
+                enfantIDs.Add(id);
+
+            HttpContext.Session.Set("enfantIds", enfantIDs);
+
+            return Redirect("index");
+
+        }
+
+        public IActionResult SupprimerUnEnfant(int id)
+        {
+            var enfantIDs = HttpContext.Session.Get<List<int>>("enfantIds");
+            if (enfantIDs == null)
+            {
+                enfantIDs = new List<int>();
+            }
+
+            if (enfantIDs.Contains(id))
+            enfantIDs.Remove(id);
+
+            HttpContext.Session.Set("enfantIds", enfantIDs);
+
+            return Redirect("index");
+
+        }
 
     }
 }

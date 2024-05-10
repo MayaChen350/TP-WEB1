@@ -14,7 +14,10 @@
             {
                 <h5 class="card-title text-uppercase fs-1">Personnage vedette</h5>
             }
-            <btn class="btn btn-primary text-uppercase">Favoris +</btn>
+            <form asp-controller="Favoris" asp-action="AjouterUnEnfant">
+                <input type="hidden" value="@Model.Id" name="id"/>
+                <input type="submit" class="btn btn-primary text-uppercase" value="Favoris +">
+            </form>
         </div>
     </div>
 
@@ -34,14 +37,7 @@
 <!--Utilisé pour les citations-->
 <footer class="pt-3">
     <h2>Sources des images</h2>
-    <button type="button"
-            class="RESET-BTN btn text-decoration-underline"
-            data-bs-toggle="popover"
-            data-bs-trigger="hover"
-            data-bs-title="Source"
-            data-bs-content="@Model.SourceImagePrincipal (Cliquer pour le lien)">
-        <a class="text-light" href="@Model.LienSourceImage">@Model.Nom (Principal)</a>
-    </button>
+    <partial name="_CreditsPartial" for="@Model" />
     <button type="button"
             class="RESET-BTN btn text-decoration-underline"
             data-bs-toggle="popover"

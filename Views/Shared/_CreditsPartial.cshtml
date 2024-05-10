@@ -1,0 +1,11 @@
+﻿@model IFireEmblem
+
+<button type="button"
+        class="RESET-BTN btn text-decoration-underline"
+        data-bs-toggle="popover"
+        data-bs-trigger="hover"
+        data-bs-title="Source"
+        data-bs-content="@Model.SourceImagePrincipal (Cliquer pour le lien) ">
+    <a class="text-light"
+       href="@Model.LienSourceImage">@Model.Nom</a>
+</button>

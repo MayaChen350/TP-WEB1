@@ -5,7 +5,7 @@ namespace TP_WEB.Models
     /// <summary>
     /// Personnage de Fire Emblem 7 d'un roster.
     /// </summary>
-    public class Personnage
+    public class Personnage : IFireEmblem
     {
         private string chaineArmesUtilisees;
 

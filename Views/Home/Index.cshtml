@@ -23,14 +23,6 @@
     <h2>Sources des images</h2>
     @foreach (var r in Model)
     {
-        <button type="button"
-                class="RESET-BTN btn text-decoration-underline"
-                data-bs-toggle="popover"
-                data-bs-trigger="hover"
-                data-bs-title="Source"
-                data-bs-content="@r.SourceImagePrincipal (Cliquer pour le lien) ">
-            <a class="text-light"
-               href="@r.LienSourceImage">Roster @r.Id</a>
-        </button>
+        <partial name="_CreditsPartial" for="@r" />
     }
 </footer>

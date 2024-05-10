@@ -1,0 +1,10 @@
+﻿@model Personnage
+
+<a href="/GestionEnfant/Delete/@Model.Id" class="btn-close" style="width: 0.5em;"></a> <!--La solution la plus rapide que j'avais-->
+<a class="RESET-A row col-md-4" href="Detail/@Model.Id">
+    <h2>@Model.Nom</h2>
+    <img class="border border-black"
+         src="@Model.LienImage"
+         alt="Image de @Model.Nom" />
+    <Model class="fs-3">Classe de base: @Model.Classes[0]</Model>
+</a>

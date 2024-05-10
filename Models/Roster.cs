@@ -3,7 +3,7 @@
     /// <summary>
     /// Roster d'un personnage principal.
     /// </summary>
-    public class Roster
+    public class Roster : IFireEmblem
     {
         /// <summary>
         /// Id du roster.

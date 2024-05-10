@@ -1,0 +1,117 @@
+﻿@model PageRechercheViewModel
+
+<h1>Liste des personnages</h1>
+<div class="d-flex">
+    <div class="row text-center">
+        @foreach (var p in Model.Resultat)
+        {
+            <partial name="_EnfantPartial" for="@p" />
+        }
+    </div>
+    <div class="accordion FOLLOW bg-dark rounded-2" id="accordionSearch">
+        <div class="accordion-item bg-dark">
+            <h2 class="accordion-header">
+                <button class="accordion-button bg-dark-subtle"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne">
+                    Recherche
+                </button>
+            </h2>
+            <div id="collapseOne"
+                 class="accordion-collapse collapse show"
+                 data-bs-parent="#accordionSearch">
+                <div class="accordion-body">
+                    <form class="d-flex flex-column gap-4 bg-dark p-3 text-white"
+                          action="/Enfant/Filtrer"
+                          method="get">
+                        <div>
+                            <h3>Recherche par mots-clés</h3>
+                            <input type="text" name="MotCles" placeholder="Saisir un mot mots-clés" value="@Model.Criteres.LigneMotCles" />
+                        </div>
+
+                        <div>
+                            <h3>Stats totaux</h3>
+                            <div class="d-flex">
+                                <input type="number" name="StatsMin" value="@Model.Criteres.StatsMin" placeholder="Min" />
+                                <input type="number" name="StatsMax" value="@Model.Criteres.StatsMax" placeholder="Max" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3>Personnage vedette</h3>
+                            <select name="SiPersonnageVedette">
+                                @switch (Model.Criteres.PersonnageVedette)
+                                {
+                                    case enumPersonnageVedette.PeuImporte:
+                                        <option value="@enumPersonnageVedette.PeuImporte" selected class="dropdown-item">Peu importe</option>
+                                        <option value="@enumPersonnageVedette.Oui" class="dropdown-item">Oui</option>
+                                        <option value="@enumPersonnageVedette.Non" class="dropdown-item">Non</option>
+                                        break;
+                                    case enumPersonnageVedette.Oui:
+                                        <option value="@enumPersonnageVedette.PeuImporte" class="dropdown-item">Peu importe</option>
+                                        <option value="@enumPersonnageVedette.Oui" selected class="dropdown-item">Oui</option>
+                                        <option value="@enumPersonnageVedette.Non" class="dropdown-item">Non</option>
+                                        break;
+                                    default:
+                                        <option value="@enumPersonnageVedette.PeuImporte" class="dropdown-item">Peu importe</option>
+                                        <option value="@enumPersonnageVedette.Oui" class="dropdown-item">Oui</option>
+                                        <option value="@enumPersonnageVedette.Non" selected class="dropdown-item">Non</option>
+                                        break;
+                                }
+                            </select>
+                        </div>
+
+                        <div>
+                            <h3>Équipe</h3>
+                            <div>
+                                <div class="form-check">
+                                    <input class="form-check-input"
+                                    @Model.Criteres.CheckedOuNon(Model.Criteres.AvecLyn)
+                                           name="AvecLyn"
+                                           type="checkbox"
+                                           value="true"
+                                           id="Lyn-team" />
+                                    <label class="form-check-label" for="Lyn-team">Équipe de Lyn</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input"
+                                    @Model.Criteres.CheckedOuNon(Model.Criteres.AvecEliwood)
+                                           name="AvecEliwood"
+                                           type="checkbox"
+                                           value="true"
+                                           id="Eliwood-team" />
+                                    <label class="form-check-label" for="Eliwood-team">Équipe d'Eliwood</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input"
+                                    @Model.Criteres.CheckedOuNon(Model.Criteres.AvecHector)
+                                           name="AvecHector"
+                                           type="checkbox"
+                                           value="true"
+                                           id="Hector-team" />
+                                    <label class="form-check-label" for="Hector-team">Équipe d'Hector</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between DERNIER-BOUTONS">
+                            <input class="btn btn-secondary rounded-0" type="button" value="Effacer">
+                            <input class="btn btn-primary bg-primary" type="submit" value="Rechercher">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <h2>Sources des images</h2>
+    @foreach (var p in Model.Resultat)
+    {
+        <partial name="_CreditsPartial" for="@p" />
+    }
+</footer>

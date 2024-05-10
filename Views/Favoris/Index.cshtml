@@ -2,7 +2,13 @@
 
 <h1 class="text-uppercase">Mes personnages favoris</h1>
 <p>
-    Vous avez <span><b>1 personnage</b></span> en favoris! Bravo!
+    Vous avez <span>
+        <b>
+            @Model.Count personnage@(
+            Model.Count > 1 ? "s" : ""
+            )
+        </b>
+    </span> en favoris! Bravo!
 </p>
 <table class="table table-striped table-dark FAVORIS">
     <thead>
@@ -11,6 +17,7 @@
             <th>Nom Personnage</th>
             <th>Classe de base</th>
             <th>Stats de base totaux</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -23,6 +30,12 @@
                 <td>@p.Nom</td>
                 <td>@p.Classes[0]</td>
                 <td>@p.StatsDeBaseTotaux</td>
+                <td>
+                    <form asp-controller="Favoris" asp-action="SupprimerUnEnfant">
+                        <input type="hidden" name="id" value="@p.Id">
+                        <input type="submit" value="Supprimer" class="bg-danger text-light">
+                    </form>
+                </td>
             </tr>
         }
     </tbody>
